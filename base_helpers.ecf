@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-21-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-21-0 http://www.eiffel.com/developers/xml/configuration-1-21-0.xsd" name="base_helpers" uuid="BED441EB-DBF0-4AE0-BB64-06A42C305D53" library_target="base_helpers">
+	<target name="base_helpers">
+		<root all_classes="true"/>
+		<file_rule>
+			<exclude>/CVS$</exclude>
+			<exclude>/EIFGENs$</exclude>
+			<exclude>/\.git$</exclude>
+			<exclude>/\.svn$</exclude>
+		</file_rule>
+		<option warning="warning" manifest_array_type="mismatch_warning">
+			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
+		</option>
+		<setting name="console_application" value="true"/>
+		<setting name="dead_code_removal" value="feature"/>
+		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
+		<library name="diff" location="$ISE_LIBRARY\library\diff\diff.ecf"/>
+		<library name="json" location="$ISE_LIBRARY\contrib\library\text\parser\json\library\json.ecf"/>
+		<cluster name="src" location=".\src\" recursive="true"/>
+	</target>
+	<target name="base_helpers_tests" extends="base_helpers">
+		<root class="APPLICATION" feature="make"/>
+		<option warning="warning">
+			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
+		</option>
+		<setting name="console_application" value="true"/>
+		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
+		<cluster name="test" location=".\testing\" recursive="true"/>
+	</target>
+</system>
