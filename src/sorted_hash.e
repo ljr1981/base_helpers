@@ -315,11 +315,13 @@ feature {NONE} -- Imp: Internal Output
 				if not ic_items.item.is_empty then
 					create l_object.make_with_capacity (1)
 					l_list := ic_items.item.split (',')
+					check key_value_pair: l_list.count = 2 end
+					l_list [2].adjust
 					l_object.put (create {JSON_STRING}.make_from_string (l_list [2]), create {JSON_STRING}.make_from_string (l_list [1]))
 					l_array.add (l_object)
 				end
 			end
-
+				-- Final object from array ...
 			create l_object.make_with_capacity (1)
 			l_object.put (l_array, create {JSON_STRING}.make_from_string ("items"))
 			Result := l_object.representation

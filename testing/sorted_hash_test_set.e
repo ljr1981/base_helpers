@@ -76,6 +76,14 @@ feature -- Test routines
 		end
 
 	json_out_tests
+		note
+			testing:
+				"covers/{SORTED_HASH}.json_out",
+				"covers/{SORTED_HASH}.json_pretty_out",
+				"covers/{SORTED_HASH}.make",
+				"covers/{SORTED_HASH}.put_sorted",
+				"covers/{SORTED_HASH_TEST_SET}.Json_out_result",
+				"covers/{SORTED_HASH_TEST_SET}.Json_pretty_out_result"
 		local
 			l_hash: SORTED_HASH [STRING, STRING]
 		do
@@ -95,11 +103,11 @@ X, anaconda
 ]"
 
 	json_out_result: STRING = "[
-{"items":[{"X":" anaconda"},{"Y":" zebra"}]}
+{"items":[{"X":"anaconda"},{"Y":"zebra"}]}
 ]"
 
 	json_pretty_out_result: STRING = "[
-{"items":[{"X":" anaconda"},{"Y":" zebra"}]}
+{"items":[{"X":"anaconda"},{"Y":"zebra"}]}
 ]"
 
 end
